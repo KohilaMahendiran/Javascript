@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Array location methods</title>
+        <script>
+            var employees=[
+                {
+                    id:1,
+                    name:'Kohila',
+                    designation:'CEO'
+                },
+                {
+                    id:2,
+                    name:'Sivakumar',
+                    designation:'Senior UI Designer'
+                },
+                {
+                    id:3,
+                    name:'Govind',
+                    designation:'Junior Developer'
+                }
+            ];
+            console.log(employees[2]);
+            var person={
+                id:2,
+                name:'Sivakumar',
+                designation:'Senior UI Designer'
+            };
+            console.log(employees.indexOf(person));//return -1 because there is no person in employees
+        </script>
+    </head>
+    <body>
+        <h1>Array location methods</h1>
+    </body>
+</html>

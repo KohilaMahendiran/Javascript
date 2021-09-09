@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Object methods</title>
+        <script>
+            var user=new Object();
+            console.log(user);
+
+            user.name='Javascript Learner';
+            user.sayHi=function(){
+                console.log('Hi');
+            }
+            console.log(user.hasOwnProperty('name'));
+            console.log(user.hasOwnProperty('sayHi'));
+            console.log(user.hasOwnProperty('profession'));
+            console.log(user.hasOwnProperty('toString'));
+            console.log(user.hasOwnProperty('valueOf'));
+
+
+            //to check
+            console.log(user.toString());
+            console.log(user.valueOf());
+
+            //employee details
+            var employee1={
+                name:'Ramesh',
+                designation:'project manager',
+                salary:75000
+            };
+
+            employee1.salary=175000;
+
+            //data property attribute:[[Configurable]],[[Enumerable]],[[Writable]],[[Value]]
+            var employee2={
+                name:'Kohila'
+            };//[[Value]]='kohila' will be stored;[[Configurable]]=true,[[Enumerable]]=true,[[Writable]]=true will be default
+            employee2.name='Mahendiran';//this will be overwritten in the 'name' attribute 
+
+
+            //for a value to be not overwritten.this following helps
+            var employee3={};
+            Object.defineProperty(employee3,'name',{
+                configurable:true,
+                writable:false,
+                enumerable:true,
+                value:'RAJA KOHILA'
+            });
+            employee3.name='Meena';
+            console.log(employee3.name);
+
+
+            //another way
+            employee3.designation='Developer';
+            employee3.salary=45000;
+
+            for (prop in employee3){
+                console.log(prop,employee3[prop]);
+            }
+            //to hide salary ; we have to set the ->enumerable=false
+            Object.defineProperty(employee3,'salary',{
+                configurable:true,
+                writable:false,
+                enumerable:false,
+                value:'RAJA KOHILA'
+            });
+            console.log('Results after enumerable change');
+            for (prop in employee3){
+                console.log(prop,employee3[prop]);
+            }
+
+            employee3.bonus=10000;
+            console.log(employee3);
+            delete employee3.bonus;
+            console.log(employee3);
+
+            //another way
+            employee3.bonus=20000;
+            Object.defineProperty(employee3,'bonus',{
+                configurable:false
+            });
+            delete employee3.bonus;
+            console.log(employee3);
+
+            //accessor property:[[Get]] and [[Set]]
+            var employee4={
+                name:'Meena',
+                yearOfJoin:2019
+            };
+            employee4.bonus=10;
+
+            var employee5={
+                name:'Annadurai',
+                _bonus:0,
+                yearOfJoin:2019
+            };
+            Object.defineProperty(employee5,'bonus',{
+                get:function(){
+                    return this._bonus;
+                },
+                set:function(newBonus){
+                    if(newBonus<=20 && this.yearOfJoin < 2015){
+                        this._bonus=newBonus;
+                    }
+                }
+            });
+            employee5.bonus=10;
+            console.log(employee5);
+
+            //define properties method
+            var employee6={};
+            Object.defineProperties(employee6,{
+                name:{
+                    value:'Thambidurai'
+                },
+                yearOfJoin:{
+                    value:2019,
+                    writable:true
+                },
+                _bonus:{
+                    value:0,
+                    writable:true
+                },
+                bonus:{
+                    get:function(){
+                        return this._bonus;
+                    },
+                    set:function(newBonus){
+                        if(newBonus<=20 && this.yearOfJoin < 2015){
+                            this._bonus=newBonus;
+                        }
+                    }
+                }
+            });
+            employee6.bonus=10;
+            console.log(employee6);
+
+            employee6.yearOfJoin=2010;
+            employee6.bonus=17;
+            console.log(employee6);
+            console.log(employee6.bonus);
+        </script>
+    </head>
+    <body>
+        <h1>Object methods</h1>
+    </body>
+</html>

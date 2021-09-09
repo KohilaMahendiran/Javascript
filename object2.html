@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>do while</title>
+        <script>
+            //break and continue
+            var obj=new Object();//object constructor
+            var obj2={};//Object literal syntax
+
+            var user1=new Object();
+            user1.name='Kohilamahendiran';
+            user1.profession='BusinessWoman';
+
+            user1.sayHi=function(){
+                console.log('Hello, ' + user1.name);
+            }
+            user1.sayHi();
+
+
+            //another
+            var user2={
+                name:'Raja Kohila',
+                profession:'Entrepreneur',
+                sayHi:function(){
+                    console.log('Hello, ' + this.name);
+                }
+            }
+            user2.sayHi();
+
+            //another 
+            var user3=user2;
+            user3.sayHi();
+            user2=null;
+            user3.sayHi();
+            console.log(user3);
+
+            //first name property
+            user1['first name'] = 'some name';
+            console.log(user1);
+
+            //property
+            var propName='first name';
+            console.log(user1[propName]);
+
+            //for 
+            for (prop in user3){
+                console.log(user3[prop]);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>understanding objects better</h1>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Array as queue</title>
+        <script>
+            //queue =FCFS-first come first serve
+            //push last item into array; shift first item from tha array
+            var letMeEat=['Breakfast'];
+            var count=letMeEat.push('lunch','dinner');
+            console.log(count);
+
+            var firstMealOfTheDay=letMeEat.shift();
+            console.log(firstMealOfTheDay);
+            //to operate queue as in the reverse order
+            //insert panradhu first and array la irundhu remove panradhu array last element
+            letMeEat.unshift(firstMealOfTheDay);//this method insert the firstmealoftheday in the first element of an array
+            console.log(letMeEat);
+
+            var lastMealOfTheDay=letMeEat.pop();
+            console.log(lastMealOfTheDay);
+            console.log(letMeEat);
+        </script>
+    </head>
+    <body>
+        <h1>Array as queue</h1>
+    </body>
+</html>

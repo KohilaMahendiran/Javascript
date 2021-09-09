@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Array location methods</title>
+        <script>
+            var availableFruits=['Apple','Orange','Mango','Banana','Strawberry','Pine Apple','Kiwi','Blackberry','Blueberry','Custard Apple'];
+            var customerChoice='Mango';
+            var availablePosition=availableFruits.indexOf(customerChoice);
+            console.log(customerChoice + 'is available at' + availablePosition);
+            customerChoice='Papaya';
+            availablePosition=availableFruits.indexOf(customerChoice);
+            if(availablePosition!==-1){
+                console.log(customerChoice + 'is available at' + availablePosition);
+            }else{
+                console.log(customerChoice + 'is not available at' + availablePosition);
+            }
+
+            //first 5 fruits not have discount and next coming fruits are having discount
+            var fruitsWithDiscount='Apple';
+            availablePosition=availableFruits.indexOf(fruitsWithDiscount,5);
+            if(availablePosition!==-1){
+                console.log(fruitsWithDiscount + 'is discounted at discounted rate');
+                console.log(fruitsWithDiscount + 'is available at position' + availablePosition);
+            }else{
+                console.log(fruitsWithDiscount + 'is not have a discount');
+            }
+            // case sensitive
+            console.log('Equal?: ',availableFruits.indexOf('apple'));//return -1
+
+            //reverse search for repeated number
+            var numArray=[1,2,3,4,5,5,4,3,2,1];
+            console.log('Last 2 is at position: ',numArray.lastIndexOf(2));
+
+            //indexOf and lastIndexOf used in object
+            var entrepreneur={
+                id:1,
+                name:'Kohila',
+                designation:'Entrepreneur'
+            };
+            var designer={
+                id:2,
+                name:'Meena',
+                designation:'Senior UI designer'
+            };
+            var developer={
+                id:3,
+                name:'Mahendiran',
+                designation:'Junior Developer'
+            };
+            var employees=[entrepreneur,designer,developer];
+            console.log('Designer is at position: ',employees.indexOf(designer));
+            
+        </script>
+    </head>
+    <body>
+        <h1>Array location methods</h1>
+    </body>
+</html>

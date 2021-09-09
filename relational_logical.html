@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Javascript in HTML</title>
+        <script>
+            //Relational operator
+            console.log('10>8=',10>8);
+            console.log('10<8=',10<8);
+            console.log('16>=15',16>=15);
+            console.log('21<=18',21<=18);
+            console.log('15==15',15==15);
+            console.log('15!=15',15!=15);
+            console.log('15=="15"=',15=="15");
+            console.log('15!="15"=',15!="15");
+            console.log('15==="15"',15==="15");
+            console.log('15!=="15"',15!=="15");
+            //logical or boolean operators falsy values=false,0,empty string,null,undefined,NaN.All others are truthy values
+            console.log('!true=',!true);
+            console.log('!10=',!10);
+
+            console.log('10 || "ok"=',10||'ok');
+            console.log('"yes" || null=',"yes"||null);
+            console.log('"" || 25=',""||25);
+            console.log('undefined || false=',undefined||false);
+
+            var someUserInput;
+            //psseudo to get user input
+            var num=someUserInput||0;
+            console.log(num);
+
+            //AND 
+            console.log('10 && "ok"=',10&&'ok');
+            console.log('"yes" && null=',"yes"&&null);
+            console.log('"" && 25=',""&&25);
+            console.log('undefined && false=',undefined&&false);
+            
+        </script> 
+    </head>
+    <body>
+        <h1>Relational &amp; Logical Operator</h1>
+        <ul>
+            <li>&gt;,&lt;,&gt;=,&lt;=,==,!=,===,!==</li>
+            <li>! (NOT),|| (OR),&& (AND)</li>
+        </ul>
+    </body>
+</html>

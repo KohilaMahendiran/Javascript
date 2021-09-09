@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>JS function</title>
+        <script>
+            var addNums=new Function('num1','num2','return num1 + num2');
+            console.log(addNums(10,20));
+
+            function sum(num1,num2){
+                return num1 + num2;
+            }
+            console.log(sum(5,5));
+
+            var addTwoNums=addNums;
+            addNums=null;
+            console.log(addTwoNums(3,7));
+
+            function callSomeFunction(funName,param){
+                return funName(param);
+            }
+            callSomeFunction(alert,'Function as value');
+
+            var doubleIt=function(num){
+                return num*2;
+            };
+            console.log(doubleIt(8));
+
+            // automatic available objects
+            console.log('Excess parameters: ',doubleIt(4,4,4));
+            console.log('No parameters: ',doubleIt());//NaN
+
+            // array like object:to access more than one argument for single parameter function
+            var sum=function(){
+                console.log(arguments);
+            }
+            console.log(sum(1,2,3));
+
+            //
+            var sum=function(){
+                return Array.from(arguments).reduce(function(accumulator,currentValue){
+                    return accumulator + currentValue;
+                });
+            };
+            console.log(sum(5,7,8));
+            console.log(sum(10,15,25));
+            //to find factorial
+
+            var factorial=function(num){
+                if(num<=1){
+                    return 1;
+                }else{
+                    return num*factorial(num-1);
+                }
+            };
+            console.log('Factorial of 5 : ',factorial(19));
+
+            // another way gives wrong answer
+            var findFactorial=factorial;
+            console.log('Factorial of 6: ',findFactorial(6));
+
+            factorial=null;
+            console.log('fact of 7: ',findFactorial(7));
+
+            //to solve the above issues
+            var factorial=function(num){
+                if(num<=1){
+                    return 1;
+                }else{
+                    return num*arguments.callee(num-1);
+                }
+            };
+            console.log('fact of 8:',factorial(8));
+            
+            var findFactorial=factorial;
+            console.log('Fact of 8: ',findFactorial(8));
+            factorial=null;
+            console.log('Fact of 8:',findFactorial(8));
+            
+            //anonymous methods IIFE-immediately invoked function expression
+            (function(){
+                var name='Kohila';
+                console.log(name);
+            })();
+            console.log(name);
+
+            (function sayName(name){
+                console.log(name);
+            })('Javascript');
+           
+        </script>
+    </head>
+    <body>
+        <h1>JS functions</h1>
+    </body>
+</html>

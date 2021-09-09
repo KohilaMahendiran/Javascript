@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>If and if else statements</title>
+        <script>
+            var personOneAge=45;
+            var personTwoAge=54;
+            if(personOneAge > personTwoAge){
+                console.log('person one is older than person two');
+            }else{
+                console.log('person two is older than person one');
+            }
+            var personThreeAge=75;
+            if(personOneAge > personTwoAge && personOneAge > personThreeAge){
+                console.log('person one is older than two and three');
+            }else if(personTwoAge > personOneAge && personTwoAge > personThreeAge){
+                console.log('person two is older than one and three');
+            }else{
+                console.log('person three is older than two and one');
+            }
+
+            //amusement park
+            var age=16;
+            var parentsPermission=true;
+            if(age>=18 || parentsPermission){
+                console.log('You are allowed for this roller coaster ride');
+            }else{
+                console.log('You are not allowed for this roller coaster ride');
+            }
+
+            age=52;
+            parentsPermission=false;
+            if((age<=16 && parentsPermission === false) || age>=60){
+                console.log('You are NOT allowed for this roller coaster ride');
+            }else{
+                console.log('You are allowed for this roller coaster ride');
+            }
+        </script>
+    </head>
+    <body>
+        <h1>If and if else statements</h1>
+    </body>
+</html>

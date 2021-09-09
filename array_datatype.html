@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Array datatype</title>
+        <script>
+            var employee1={
+                name:'Kohilamahendiran',
+                designation:'Entrepreneur',
+                salary:100000
+            };
+
+            var myArray={
+                0:2000,
+                1:'Dress',
+                2:true,
+                3:null
+            };
+            //constructor syntax
+            var languages= new Array();//can be used to store infinite values
+            var students=new Array(10);//can be used to store only 10 values
+            console.log(students);
+
+
+            var frontendFrameworks=new Array('AngularJS','React JS','Vue JS');
+            console.log(frontendFrameworks);
+
+            //literal syntax
+            var languages=[];
+            var students=[undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
+            console.log(students);
+
+            var frontendFrameworks=['Angular JS','React JS','Vue JS'];
+            console.log(frontendFrameworks);
+            //To print one property
+            console.log(frontendFrameworks[1]);//print 'React JS'
+            console.log(frontendFrameworks.length);// print the length is 3
+            // to add a new item to an array
+            frontendFrameworks[3]='Embed JS';
+            frontendFrameworks[99]='Backbone JS';
+            console.log(frontendFrameworks.length);//print 100
+            
+            console.log(frontendFrameworks instanceof Array);//true
+
+            //ease array
+            console.log(Array.isArray(frontendFrameworks));
+        </script>
+    </head>
+    <body>
+        <h1>Array datatype</h1>
+    </body>
+</html>

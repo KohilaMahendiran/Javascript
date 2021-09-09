@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Math function</title>
+        <script>
+            var maxValue=Math.max(1,2,5,23,333,454);
+            console.log(maxValue);
+
+            var minValue=Math.min(1,2,5,23,333,454);
+            console.log(minValue);
+
+            //rounding methods
+            //round 
+            console.log(Math.round(35.09));
+            console.log(Math.round(99.89));
+            //ceil
+            console.log(Math.ceil(6.1));
+            console.log(Math.ceil(6.5));
+            console.log(Math.ceil(6.9));
+            //floor
+            console.log(Math.floor(6.1));
+            console.log(Math.floor(6.5));
+
+            //random method
+            console.log(Math.random());
+            console.log(Math.random());
+            console.log(Math.random());
+            console.log(Math.random());
+
+            //dice 
+            var randomNumber=Math.floor(Math.random()*numberOfChoices + firstValue);
+            var numberOfChoices=12;
+            var firstValue=1;
+            var randomNumber=Math.floor(Math.random()*numberOfChoices + firstValue);
+            console.log('Random Number: ',randomNumber);
+
+
+            //to get number between 100 and 500
+            var numberOfChoices=400;
+            var firstValue=100;
+            var randomNumber=Math.floor(Math.random()*numberOfChoices + firstValue);
+            console.log('Random Number (100-500)',randomNumber);
+
+            //function
+            function getRandomNumberBetween(from,to){
+                return Math.floor(Math.random()*(to-from) + from);
+            }
+            console.log('Randon bet 3 and 8: ',getRandomNumberBetween(3,8));
+            console.log('Randon bet 15 and 25: ',getRandomNumberBetween(15,25));
+
+            var languages=['C','C++','Java','Javascript'];
+            console.log('Random languages: ',languages[getRandomNumberBetween(0,languages.length-1)]);
+
+        </script>
+    </head>
+    <body>
+        <h1>math</h1>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>JS function</title>
+        <script>
+            //[5,20,3,11,15].reduce(function(accumulator,currentValue,index,array){
+                //statements
+            //},initialValue)
+            var numbers=[10,20,30,40,50];
+            var sum=numbers.reduce(function(accumulator,currentValue,index){
+                console.log('Iteration Number: ',index);
+                console.log('Accumulator',accumulator);
+                console.log('current value',currentValue);
+                return accumulator + currentValue;
+            });
+            console.log(sum);
+
+            //two extra examples
+            var nestedArray=[[1,2],[3,4],[5,6],[7,8]];
+            var flattenedArray=nestedArray.reduce(function(accumulator,currentValue){
+                return accumulator.concat(currentValue);
+            });
+            console.log(flattenedArray);
+
+            //next 
+            var randomCharacters=['b','a','t','c','a','t','s','a','t'];
+            var uniqueCharacters=randomCharacters.reduce(function(accumulator,currentValue){
+                if(accumulator.indexOf(currentValue)===-1){
+                    accumulator.push(currentValue);
+                }
+                return accumulator;
+            },[]);
+            console.log(uniqueCharacters);
+        </script>
+    </head>
+    <body>
+        <h1>JS functions</h1>
+    </body>
+</html>

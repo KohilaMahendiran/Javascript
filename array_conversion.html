@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Array conversion</title>
+        <script>
+            var user =new Object();
+            console.log(user);
+
+            user.name='Javascript Learner';
+            user.sayHi=function(){
+                console.log('Hi');
+            }
+            console.log(user.hasOwnProperty('name'));
+            console.log(user.hasOwnProperty('sayHi'));
+            console.log(user.hasOwnProperty('profession'));
+            console.log(user.hasOwnProperty('toString'));
+            console.log(user.hasOwnProperty('valueOf'));
+
+            console.log(user.toString());
+            console.log(user.valueOf());
+
+
+            // to overwrite this object object  behaviour
+            var user={
+                name:'Javascript Learner',
+                sayHi:function(){
+                    return 'Hi';
+                },
+                toString:function(){
+                    return this.name + 'says' + this.sayHi();
+                },
+                valueOf:function(){
+                    return true;
+                },
+                toLocaleString:function(){
+                    return 'Javascript manavan vanakkam endru korugirar';
+                }
+            };
+            console.log(user.toString());
+            console.log(user.valueOf());
+            console.log(user.toLocaleString());
+
+            //
+            var fruits=['Apple','Orange','Mango'];
+            console.log(fruits.toLocaleString());
+            console.log(fruits.toString());
+            alert(fruits.valueOf());
+
+
+            //join method
+            console.log(fruits.join());//print fruit values as comma separated string
+
+            // another character instead  of comma
+            console.log(fruits.join('-'));
+            console.log(fruits.join('+'));
+        </script>
+    </head>
+    <body>
+        <h1>Array conversion</h1>
+    </body>
+</html>

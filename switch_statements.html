@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>switch</title>
+        <script>
+            //switch
+            var day=5;
+            switch(day){
+                case 1:
+                console.log('monday, funday');break;
+                case 2:
+                console.log(' tuesday waste day');break;
+                case 3:
+                console.log('wednesday');break;
+                case 4:
+                console.log('thursday');break;
+                case 5:
+                console.log('friday');break;
+                case 6:
+                console.log('saturday');break;
+                case 7:
+                console.log('sunday');break;
+                default:
+                console.log('Sunday');break;
+            }
+            
+           // another way
+           switch('Hello JS'){
+               case 'hello'+'JS':
+                   console.log('My mother');
+                   break;
+               default:
+                   console.log('Go away from here');
+           }
+
+           day=6;
+           switch(true){
+                case day>0 && day<6:
+                   console.log('working days');
+                   break;
+                case day===6 || day===7:
+                   console.log('Holidays');
+                   break;
+                default:
+                   console.log('which day are u taking about');
+                   break;
+           }
+        </script>
+    </head>
+    <body>
+        <h1>switch</h1>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>do while</title>
+        <script>
+            //break and continue
+            var month=prompt('Enter a number between 1 to 12',6);
+            for (var days=1;days<=31;days++){
+                if((month==4 || month==6 || month==9 || month==11)&& days==31)
+                continue;
+                console.log('days:',days);
+                
+                if(month==2 && days==28)
+                break;
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h1>do while,while &amp; for loops</h1>
+    </body>
+</html>

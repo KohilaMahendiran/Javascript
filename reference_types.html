@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>reference types</title>
+        <script>
+            //reference types
+            var person=new Object();
+            console.log(person instanceof Object);
+
+            person.name='Kohilamahendiran';
+            person.profession='BusinessWoman';
+
+            console.log(person.name);
+            console.log(person.profession);
+            //methods and objects are grouped
+            person.sayHi=function(){
+                console.log('Hi ' + person.name);
+            }
+
+            person.sayHi();
+
+            //difference between primitive values and object values
+            var num1=10;
+            var num2=num1;
+            var obj1=new Object();
+            var obj2=obj1;
+
+            num2=20;
+            console.log('Num1:',num1);
+            console.log('Num2:',num2);
+
+            obj2.newProp='By Reference';
+            console.log('obj1:',obj1);
+            console.log('obj2:',obj2);
+        </script>
+    </head>
+    <body>
+        <h1>reference types introduction</h1>
+    </body>
+</html>

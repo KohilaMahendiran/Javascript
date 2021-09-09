@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>creating new Objects</title>
+        <script>
+            var employee1={
+                name:'Ramesh',
+                designation:'Project Manager',
+                salary:75000
+            };
+
+            console.log(employee1 instanceof Object);//true
+
+            var socialMedia1={
+                name:'Youtube',
+                type:'Video Hosting',
+                popularity:'High'
+            };
+
+            console.log(socialMedia1 instanceof Object);//true
+
+
+            //function
+            function employee(){
+
+            }
+            console.log(employee());
+            console.log(new employee());
+
+
+            //use this
+            /*function employee(){
+                var this={}//implicitly created
+                //other statements
+                return this;//implicitly returned
+            }*/
+
+            //solved the repeated code
+            function Employee(name,designation,salary){
+                this.name=name;
+                this.designation=designation;
+                this.salary=salary;
+            }
+
+            var employee1=new Employee('RameshPrabha','Project Manager',100000);
+            console.log(employee1);
+            var employee2=new Employee('Raghav','Developer Trainee',15000);
+            console.log(employee2);
+
+            console.log(employee1 instanceof Employee);//true
+            console.log(employee1 instanceof Object);//true
+        </script>
+    </head>
+    <body>
+        <h1>creating new Objects</h1>
+    </body>
+</html>
